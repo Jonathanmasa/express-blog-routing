@@ -4,12 +4,38 @@ const port = 3000;
 
 app.use(express.static('public'));
 
-// prima rotta
-app.get('/', (req, res) => {
-    res.send(`<h1>server del mio blog</h1>`);
-})
 
+// index
+app.get('/posts', function (req, res) {
+res.send('Lista dei post');
+});
 
+// show
+app.get('/posts/:id', function (req, res) {
+res.send('Dettagli dei post' + req.params.id);
+});
+
+// store
+app.post('/posts', function (req, res) {
+res.send('Creazione nuovo post');
+});
+
+// update
+app.put('/posts/:id', function (req, res) {
+res.send('Modifica integrale del post' + req.params.id);
+});
+
+// modify
+app.patch('/posts/:id', function (req, res) {
+res.send('Modifica parziale del post' + req.params.id);
+});
+
+// destroy
+app.delete('/posts/:id', function (req, res) {
+res.send('Eliminazione del post' + req.params.id);
+});
+    
+   
 
 // partenza dal server
 app.listen(port, () => {

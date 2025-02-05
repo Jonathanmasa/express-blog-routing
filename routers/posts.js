@@ -3,33 +3,33 @@ const express = require('express');
 const router = express.Router();
 
 // index
-app.get('/pizzas', function (req, res) {
-res.send('Lista delle pizze');
+app.get('/posts', function (req, res) {
+res.send('Lista dei post');
 });
 
 // show
-app.get('/pizzas/:id', function (req, res) {
-res.send('Dettagli della pizza ' + req.params.id);
+app.get('/posts/:id', function (req, res) {
+res.send('Dettagli dei post' + req.params.id);
 });
 
 // store
-app.post('/pizzas', function (req, res) {
-res.send('Creazione nuova pizza');
+app.post('/posts', function (req, res) {
+res.send('Creazione nuovo post');
 });
 
 // update
-app.put('/pizzas/:id', function (req, res) {
-res.send('Modifica integrale della pizza ' + req.params.id);
+app.put('/posts/:id', function (req, res) {
+res.send('Modifica integrale del post' + req.params.id);
 });
 
 // modify
-app.patch('/pizzas/:id', function (req, res) {
-res.send('Modifica parziale della pizza ' + req.params.id);
+app.patch('/posts/:id', function (req, res) {
+res.send('Modifica parziale del post' + req.params.id);
 });
 
 // destroy
-app.delete('/pizzas/:id', function (req, res) {
-res.send('Eliminazione della pizza ' + req.params.id);
+app.delete('/posts/:id', function (req, res) {
+res.send('Eliminazione del post' + req.params.id);
 });
 
 // partenza dal server
