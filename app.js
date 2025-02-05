@@ -1,8 +1,13 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+// importo il router dei posts
+const postsRouter = require('./routers/posts');
 
 app.use(express.static('public'));
+
+// utilizzo la rotta dei post per definire la parte iniziale
+app.use("/posts", postsRouter)
 
 
 // index
